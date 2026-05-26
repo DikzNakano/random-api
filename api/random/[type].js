@@ -11,13 +11,9 @@ export default function handler(req, res) {
 
     const result = data[Math.floor(Math.random() * data.length)]
 
-    res.json({
-      result
-    })
+    res.redirect(result)
 
   } catch {
-    res.json({
-      error: "Category not found"
-    })
+    res.status(404).send("Category not found")
   }
 }
